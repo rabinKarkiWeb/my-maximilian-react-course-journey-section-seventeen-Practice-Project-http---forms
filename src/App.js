@@ -16,13 +16,12 @@ function App() {
     setCartIsShown(false);
   };
 
+
   return (
     <CartProvider>
       {cartIsShown && <Cart onClose={hideCartHandler} />}
-      <Header onShowCart={showCartHandler} />
-      <main>
-        <Meals />
-      </main>
+         <Header onShowCart={showCartHandler} />
+        <main><Meals /></main>
     </CartProvider>
   );
 }
