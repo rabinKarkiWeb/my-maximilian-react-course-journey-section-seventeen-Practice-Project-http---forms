@@ -2,7 +2,7 @@ import Card from '../UI/Card';
 import MealItem from './MealItem/MealItem';
 import classes from './AvailableMeals.module.css';
 import {useCallback, useEffect, useState} from "react";
-import * as url from "url";
+
 
 
 const AvailableMeals = () => {
@@ -21,7 +21,6 @@ const AvailableMeals = () => {
       }
       const data = await response.json();
       let loadedMeals = [];
-      console.log(data);
       for (const dataKey in data) {
         loadedMeals.push({
           id:dataKey,
@@ -30,20 +29,18 @@ const AvailableMeals = () => {
           price:data[dataKey].price
         })
       }
-      console.log(loadedMeals);
       setMeals(loadedMeals);
       setIsLoading(false)
     }catch (error){
       setError(error.message)
       setIsLoading(false)
-      // console.log(error);
     }
   },[])
 
 
-  useEffect(()=>{
+  useEffect( () => {
     fetchMealsHandler();
-  },[])
+  },[fetchMealsHandler])
 
 if(isLoading){
   return <section className={classes.MealsLoading}><p>loading ....</p></section>

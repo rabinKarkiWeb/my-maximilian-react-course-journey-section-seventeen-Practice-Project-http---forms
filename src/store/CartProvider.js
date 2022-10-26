@@ -56,10 +56,7 @@ const cartReducer = (state, action) => {
   }
 
   if (action.type === 'EMPTY') {
-    return {
-      items: [],
-      totalAmount: 0
-    };
+    return defaultCartState;
   }
 
   return defaultCartState;

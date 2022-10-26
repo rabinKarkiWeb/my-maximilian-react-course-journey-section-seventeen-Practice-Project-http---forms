@@ -1,11 +1,17 @@
-import {useEffect} from "react";
+import {useCallback, useEffect} from "react";
 
-const useHttp = () => {
-	useEffect(() =>{
-		const url = 'https://food-order-maximilian-react-default-rtdb.asia-southeast1.firebasedatabase.app/';
-			fetch(url,)
-		},[]
-	)
+const useHttp = (url='', data = {}) => {
+	const fetchMealsHandler = useCallback(async () =>{
+		setIsLoading(true);
+
+
+
+
+	},[])
+
+
+
+
 }
 
 export default useHttp;

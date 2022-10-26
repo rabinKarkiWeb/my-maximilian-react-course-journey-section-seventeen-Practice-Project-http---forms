@@ -1,5 +1,4 @@
 import classes from './Checkout.module.css';
-import {useRef, useState} from "react";
 import useInput from "../../hooks/use-input";
 
 const notEmpty = value => value.trim() !== '';
@@ -44,8 +43,13 @@ const Checkout = (props) => {
 		if (!formIsValid){
 			return;
 		}
-		//submit cart data
 
+		props.onConfirm({
+			name,
+			street,
+			postal,
+			city,
+		})
 	};
 
 	return (
